@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: NitroShare API
+Description: NitroShare API classes
+URL: https://github.com/nitroshare/libnitroshareapi
+Version: @VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -lnitroshareapi
