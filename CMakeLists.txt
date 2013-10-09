@@ -22,8 +22,10 @@ find_package(Qt5Network REQUIRED)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 include_directories(include)
 
-set(SRC "")
-qt5_wrap_cpp(MOC "")
+set(SRC
+    src/client.cpp)
+qt5_wrap_cpp(MOC
+    include/nitroshare/api/client.h)
 
 add_library(nitroshareapi SHARED ${SRC} ${MOC})
 set_target_properties(nitroshareapi PROPERTIES
