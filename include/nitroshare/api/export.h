@@ -8,26 +8,16 @@
  * License, or (at your option) any later version.
  */
 
-#ifndef NSA_CLIENT_H
-#define NSA_CLIENT_H
 
-#include <QObject>
+#ifndef NSA_EXPORT_H
+#define NSA_EXPORT_H
 
-#include "export.h"
+#include <QtCore/qglobal.h>
 
-namespace NitroShare
-{
-    namespace API
-    {
-        class NSA_EXPORT_H Client : public QObject
-        {
-            Q_OBJECT
+#if defined(nitroshareapi_EXPORTS)
+    #define NSA_EXPORT Q_DECL_EXPORT
+#else
+    #define NSA_EXPORT Q_DECL_IMPORT
+#endif
 
-            public:
-
-                //...
-        };
-    }
-}
-
-#endif // NSA_CLIENT_H
+#endif // NSA_EXPORT_H
