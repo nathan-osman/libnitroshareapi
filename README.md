@@ -12,8 +12,9 @@ In order to build the library, the following dependencies must be met:
    - Visual Studio 2010+
    - GCC 4.6+
    - Clang 3.1+
- - CXX11.cmake (available [here](https://github.com/NitroShare/CXX11-CMake-Macros))
+ - CXX11.cmake (available [here](https://github.com/nitroshare/CXX11-CMake-Macros))
  - Qt 5.0+
+ - [libnitroshareutil](https://github.com/nitroshare/libnitroshareutil)
 
 ### Building
 

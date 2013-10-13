@@ -19,13 +19,43 @@ namespace NitroShare
 {
     namespace API
     {
-        class NSA_EXPORT_H Client : public QObject
+        class NSA_EXPORT ClientPrivate;
+
+        /**
+         * @brief Client for communicating with the NitroShare API
+         */
+        class NSA_EXPORT Client : public QObject
         {
             Q_OBJECT
 
             public:
 
-                //...
+                /**
+                 * @brief Creates the API client
+                 * @param parent the parent QObject
+                 */
+                explicit Client(QObject * parent);
+
+                /**
+                 * @brief Destroys the client
+                 */
+                virtual ~Client();
+
+                /**
+                 * @brief Sets the API key to use for requests
+                 * @param key the API key
+                 */
+                void setKey(QString key);
+
+                /**
+                 * @brief Sets the access token to use for requests
+                 * @param token the access token
+                 */
+                void setAccessToken(QString token);
+
+            private:
+
+                ClientPrivate * const d;
         };
     }
 }

@@ -8,27 +8,23 @@
  * License, or (at your option) any later version.
  */
 
-#include <nitroshare/api/client.h>
-#include "client_p.h"
+#ifndef NSA_CLIENT_P_H
+#define NSA_CLIENT_P_H
 
-using namespace NitroShare::API;
+#include <QString>
 
-Client::Client(QObject * parent)
-    : QObject(parent), d(new ClientPrivate)
+namespace NitroShare
 {
+    namespace API
+    {
+        class ClientPrivate
+        {
+            public:
+
+                QString key;
+                QString token;
+        };
+    }
 }
 
-Client::~Client()
-{
-    delete d;
-}
-
-void Client::setKey(QString key)
-{
-    d->key = key;
-}
-
-void Client::setAccessToken(QString token)
-{
-    d->token = token;
-}
+#endif // NSA_CLIENT_P_H

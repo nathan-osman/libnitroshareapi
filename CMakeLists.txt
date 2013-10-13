@@ -18,9 +18,13 @@ enable_cxx11()
 
 find_package(Qt5Core    REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(PkgConfig  REQUIRED)
+
+pkg_check_modules(NS REQUIRED nitroshareutil)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-include_directories(include)
+include_directories(include ${NS_INCLUDE_DIRS})
+link_directories(${NS_LIBRARY_DIRS})
 
 set(SRC
     src/client.cpp)
@@ -33,6 +37,7 @@ set_target_properties(nitroshareapi PROPERTIES
     SOVERSION ${VERSION_MAJOR})
 
 qt5_use_modules(nitroshareapi Core Network)
+target_link_libraries(nitroshareapi ${NS_LIBRARIES})
 
 install(DIRECTORY include/nitroshare/api
     DESTINATION include/nitroshare)
